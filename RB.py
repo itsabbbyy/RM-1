@@ -225,7 +225,7 @@ def show_recent_logs(message):
         else:
             bot.send_message(message.chat.id, "No data found.")
     else:
-        bot.send_message(message.chat.id, "ONLY OWNER CAN USE.")
+        bot.send_message(message.chat.id, "ONLY @itxx_abby CAN USE.")
 
 @bot.message_handler(commands=['id'])
 def show_user_id(message):
@@ -256,7 +256,7 @@ def handle_attack_button(message):
         bot.send_message(message.chat.id, "✅ 𝗣𝗹𝗲𝗮𝘀𝗲 𝗣𝗿𝗼𝘃𝗶𝗱𝗲 <𝗜𝗣> <𝗣𝗢𝗥𝗧> <𝗧𝗜𝗠𝗘>")
         bot.register_next_step_handler(message, handle_attack_details)
     else:
-        bot.send_message(message.chat.id, "🚫 𝗨𝗻𝗮𝘂𝘁𝗼𝗿𝗶𝘀𝗲𝗱 𝗔𝗰𝗰𝗲𝘀𝘀! 🚫\n\nOops! It seems like you don't have permission to use the Attack command. To gain access and unleash the power of attacks, you can:\n\n👉 Contact an Admin or the Owner for approval.\n🌟 Become a proud supporter and purchase approval.\n💬 Chat with an admin now and level up your experience!\n\nLet's get you the access you need!")
+        bot.send_message(message.chat.id, "🚫 𝗨𝗻𝗮𝘂𝘁𝗼𝗿𝗶𝘀𝗲𝗱 𝗔𝗰𝗰𝗲𝘀𝘀! 🚫\n\nOops! It seems like you don't have permission to use the Attack command. To gain access and unleash the power of attacks, you can:\n\n👉 Contact an Admin or the Owner for approval.\n🌟 Become a proud supporter and purchase approval.\n💬 Chat with an @itxx_abby now and level up your experience!\n\nLet's get you the access you need!")
 
 def handle_attack_details(message):
     user_id = str(message.chat.id)
@@ -265,7 +265,7 @@ def handle_attack_details(message):
             target, port, duration = message.text.split()
             duration = int(duration)
 
-            MAX_DURATION = 600 # Set maximum duration (in seconds) for Normal users
+            MAX_DURATION = 300 # Set maximum duration (in seconds) for Normal users
             if user_id not in ADMIN_IDS and duration > MAX_DURATION:
                 bot.send_message(message.chat.id, f"❗️𝗘𝗿𝗿𝗼𝗿: 𝗠𝗮𝘅𝗶𝗺𝘂𝗺 𝗨𝘀𝗮𝗴𝗲 𝗧𝗶𝗺𝗲 𝗶𝘀 {MAX_DURATION} 𝗦𝗲𝗰𝗼𝗻𝗱𝘀❗️")
                 return
@@ -282,7 +282,7 @@ def handle_attack_details(message):
         except ValueError:
             bot.send_message(message.chat.id, "𝗜𝗻𝘃𝗮𝗹𝗶𝗱 𝗙𝗼𝗿𝗺𝗮𝘁𝗲")
     else:
-        bot.send_message(message.chat.id, "🚫 𝗨𝗻𝗮𝘂𝘁𝗼𝗿𝗶𝘀𝗲𝗱 𝗔𝗰𝗰𝗲𝘀𝘀! 🚫")
+        bot.send_message(message.chat.id, "🚫 𝗨𝗻𝗮𝘂𝘁𝗼𝗿𝗶𝘀𝗲𝗱 𝗔𝗰𝗰𝗲𝘀𝘀! 🚫 Please Contact @itxx_abby")
 
 @bot.message_handler(func=lambda message: message.text == 'ℹ️ My Info')
 def handle_my_info_button(message):
